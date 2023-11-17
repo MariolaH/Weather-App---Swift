@@ -13,6 +13,7 @@
 		EC555D932B055F0C002FF5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC555D912B055F0C002FF5C3 /* Main.storyboard */; };
 		EC555D952B055F0D002FF5C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC555D942B055F0D002FF5C3 /* Assets.xcassets */; };
 		EC555D982B055F0D002FF5C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC555D962B055F0D002FF5C3 /* LaunchScreen.storyboard */; };
+		ECD131452B06F10C00E05B8C /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD131442B06F10C00E05B8C /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EC555D942B055F0D002FF5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC555D972B055F0D002FF5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC555D992B055F0D002FF5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD131442B06F10C00E05B8C /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		EC555D8A2B055F0C002FF5C3 /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
+				ECD131432B06F0F500E05B8C /* Model */,
 				EC555D8B2B055F0C002FF5C3 /* AppDelegate.swift */,
 				EC555D8D2B055F0C002FF5C3 /* SceneDelegate.swift */,
 				EC555D8F2B055F0C002FF5C3 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				EC555D992B055F0D002FF5C3 /* Info.plist */,
 			);
 			path = "Weather App";
+			sourceTree = "<group>";
+		};
+		ECD131432B06F0F500E05B8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECD131442B06F10C00E05B8C /* WeatherManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				EC555D902B055F0C002FF5C3 /* ViewController.swift in Sources */,
 				EC555D8C2B055F0C002FF5C3 /* AppDelegate.swift in Sources */,
+				ECD131452B06F10C00E05B8C /* WeatherManager.swift in Sources */,
 				EC555D8E2B055F0C002FF5C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
