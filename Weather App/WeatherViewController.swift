@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var conditionalImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherManager.delegate = self
         //this line of code is saying the text field should report back to the VC
         searchTextField.delegate = self
     }
@@ -48,6 +49,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         }
         searchTextField.text = ""
     }
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionalImageView.image = UIImage(systemName: weather.conditonName)
+            self.cityLabel.text = weather.cityName
+        }
+    }
 
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }
 

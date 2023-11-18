@@ -7,3 +7,7 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https://api.openweathermap.org/data/2.5/weather?&appid=
+API_KEY = 45828c575991010ef202c740624eba9f
+weatherAPIKey = "https://api.openweathermap.org/data/2.5/weather?&appid=45828c575991010ef202c740624eba9f&units=metric"
