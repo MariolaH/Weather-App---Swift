@@ -5,7 +5,7 @@
 //  Created by Mariola Hullings on 11/17/23.
 //
 
-import Foundation
+import UIKit
 
 struct WeatherModel {
     let conditionID: Int

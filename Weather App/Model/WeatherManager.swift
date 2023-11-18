@@ -5,7 +5,8 @@
 //  Created by Mariola Hullings on 11/16/23.
 //
 
-import Foundation
+import UIKit
+import CoreLocation
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
@@ -18,6 +19,11 @@ struct WeatherManager {
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
+        performRequest(with: urlString)
+    }
+  
+    func fetchWeather(latitude: CLLocationDegrees, longtitude: CLLocationDegrees) {
+        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longtitude)"
         performRequest(with: urlString)
     }
     
@@ -51,10 +57,10 @@ struct WeatherManager {
             let id = decodedData.weather[0].id
             let name = decodedData.name
             let temp = decodedData.main.temp
+
             
             let weather = WeatherModel(conditionID: id, cityName: name, temperature: temp)
             return weather
-            print(weather.temperatureString)
         } catch {
             delegate?.didFailWithError(error: error)
             return nil

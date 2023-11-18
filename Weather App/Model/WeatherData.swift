@@ -5,7 +5,7 @@
 //  Created by Mariola Hullings on 11/17/23.
 //
 
-import Foundation
+import UIKit
 
 struct WeatherData: Codable {
     let name: String
@@ -21,3 +21,4 @@ struct Weather: Codable {
     let description: String
     let id: Int
 }
+
