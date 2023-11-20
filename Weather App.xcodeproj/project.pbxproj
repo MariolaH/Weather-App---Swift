@@ -61,19 +61,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		EC2A715B2B0BB5F20015B5EF /* API */ = {
-			isa = PBXGroup;
-			children = (
-				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		EC555D7F2B055F0C002FF5C3 = {
 			isa = PBXGroup;
 			children = (
 				EC2A715C2B0BBC070015B5EF /* .gitignore */,
-				EC2A715B2B0BB5F20015B5EF /* API */,
+				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
 				EC555D8A2B055F0C002FF5C3 /* Weather App */,
 				EC555D892B055F0C002FF5C3 /* Products */,
 			);
@@ -216,6 +208,7 @@
 /* Begin XCBuildConfiguration section */
 		EC555D9A2B055F0D002FF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -279,6 +272,7 @@
 		};
 		EC555D9B2B055F0D002FF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
