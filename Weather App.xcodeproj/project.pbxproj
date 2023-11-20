@@ -19,9 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC2A71162B07AFB60015B5EF /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		EC2A71522B082BB20015B5EF /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		EC2A71542B083AB80015B5EF /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeyConfig.xcconfig; sourceTree = "<group>"; };
+		EC2A715C2B0BBC070015B5EF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EC555D882B055F0C002FF5C3 /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC555D8B2B055F0C002FF5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC555D8D2B055F0C002FF5C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +45,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC2A71562B0BADD20015B5EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC555D912B055F0C002FF5C3 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC2A71572B0BADE20015B5EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC555D8F2B055F0C002FF5C3 /* WeatherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC2A715B2B0BB5F20015B5EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		EC555D7F2B055F0C002FF5C3 = {
 			isa = PBXGroup;
 			children = (
+				EC2A715C2B0BBC070015B5EF /* .gitignore */,
+				EC2A715B2B0BB5F20015B5EF /* API */,
 				EC555D8A2B055F0C002FF5C3 /* Weather App */,
 				EC555D892B055F0C002FF5C3 /* Products */,
 			);
@@ -64,14 +91,13 @@
 			isa = PBXGroup;
 			children = (
 				ECD131432B06F0F500E05B8C /* Model */,
+				EC2A71562B0BADD20015B5EF /* View */,
+				EC2A71572B0BADE20015B5EF /* Controller */,
 				EC555D8B2B055F0C002FF5C3 /* AppDelegate.swift */,
 				EC555D8D2B055F0C002FF5C3 /* SceneDelegate.swift */,
-				EC555D8F2B055F0C002FF5C3 /* WeatherViewController.swift */,
-				EC555D912B055F0C002FF5C3 /* Main.storyboard */,
 				EC555D942B055F0D002FF5C3 /* Assets.xcassets */,
 				EC555D962B055F0D002FF5C3 /* LaunchScreen.storyboard */,
 				EC555D992B055F0D002FF5C3 /* Info.plist */,
-				EC2A71162B07AFB60015B5EF /* APIKeys.xcconfig */,
 			);
 			path = "Weather App";
 			sourceTree = "<group>";
@@ -190,7 +216,6 @@
 /* Begin XCBuildConfiguration section */
 		EC555D9A2B055F0D002FF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A71162B07AFB60015B5EF /* APIKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -254,7 +279,6 @@
 		};
 		EC555D9B2B055F0D002FF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A71162B07AFB60015B5EF /* APIKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
