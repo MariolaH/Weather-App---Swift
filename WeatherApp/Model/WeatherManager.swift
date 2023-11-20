@@ -13,9 +13,30 @@ protocol WeatherManagerDelegate {
     func didFailWithError(error: Error)
 }
 
+enum Environment {
+    enum Keys {
+    static let apiKey = "API_KEY"
+    }
+   
+    static let infoDictionary: [String: Any] = {
+       guard let dict = Bundle.main.infoDictionary else {
+           fatalError("plist not found")
+       }
+       return dict
+   }()
+   
+    static let apiKey: String = {
+       guard let apiKeyString = Environment.infoDictionary[Keys.apiKey] as? String else {
+           fatalError("API key not found")
+       }
+       return apiKeyString
+   }()
+    
+}
+
 struct WeatherManager {
-    let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY")
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?&appid=45828c575991010ef202c740624eba9f&units=metric"
+    
+    var weatherURL = "https://api.openweathermap.org/data/2.5/weather?&appid=\(Environment.apiKey)&units=metric"
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
