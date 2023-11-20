@@ -22,7 +22,6 @@
 		EC2A71522B082BB20015B5EF /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		EC2A71542B083AB80015B5EF /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeyConfig.xcconfig; sourceTree = "<group>"; };
-		EC2A715C2B0BBC070015B5EF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EC555D882B055F0C002FF5C3 /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC555D8B2B055F0C002FF5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC555D8D2B055F0C002FF5C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 		EC555D7F2B055F0C002FF5C3 = {
 			isa = PBXGroup;
 			children = (
-				EC2A715C2B0BBC070015B5EF /* .gitignore */,
 				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
 				EC555D8A2B055F0C002FF5C3 /* Weather App */,
 				EC555D892B055F0C002FF5C3 /* Products */,
