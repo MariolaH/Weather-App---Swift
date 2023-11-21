@@ -20,23 +20,23 @@ struct WeatherModel {
         let hour = getCurrentHour()
         switch conditionID {
         case 200...211:
-            return "cloud.bolt"
+            return hourIsDaytime(hour) ? "cloud.bolt" : "cloud.moon.bolt"
         case 230...232:
-            return "cloud.bolt.rain"
+            return hourIsDaytime(hour) ? "cloud.bolt.rain" : "cloud.moon.bolt.fill"
         case 300, 321:
-            return "cloud.drizzle"
+            return hourIsDaytime(hour) ? "cloud.drizzle" : "cloud.moon.rain.fill"
         case 500...521:
-            return "cloud.rain"
+            return hourIsDaytime(hour) ? "cloud.rain" : "cloud.moon.rain.fill"
         case 522...531:
-            return "cloud.heavyrain"
+            return hourIsDaytime(hour) ? "cloud.heavyrain" : "cloud.moon.rain"
         case 611...612:
-            return "cloud.sleet"
+            return hourIsDaytime(hour) ? "cloud.sleet" : "moon.dust.fill"
         case 600...602:
-            return "cloud.snow"
+            return hourIsDaytime(hour) ? "cloud.snow" : "moon.dust.fill"
         case 615...622:
-            return "cloud.snow"
+            return hourIsDaytime(hour) ? "cloud.snow" : "moon.dust.fill"
         case 701...771:
-            return "cloud.fog"
+            return hourIsDaytime(hour) ? "cloud.fog" : "moon.haze"
         case 781:
             return "tornado"
         case 801...804:
@@ -44,9 +44,9 @@ struct WeatherModel {
         case 800:
             return hourIsDaytime(hour) ? "sun.max" : "moon.stars.fill"
         case 801:
-            return hourIsDaytime(hour) ? "cloud.fill" : "moon.fill"
+            return hourIsDaytime(hour) ? "cloud.fill" : "cloud.moon.fill"
         default:
-            return hourIsDaytime(hour) ? "cloud" : "moon"
+            return hourIsDaytime(hour) ? "cloud" : "cloud.moon.fill"
         }
     }
     
