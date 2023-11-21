@@ -10,7 +10,16 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "EC555D872B055F0C002FF5C3"
+                     BuildableName = "Weather App.app"
+                     BlueprintName = "Weather App"
+                     ReferencedContainer = "container:WeatherApp.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -26,7 +35,7 @@
                BlueprintIdentifier = "EC555D872B055F0C002FF5C3"
                BuildableName = "Weather App.app"
                BlueprintName = "Weather App"
-               ReferencedContainer = "container:Weather App.xcodeproj">
+               ReferencedContainer = "container:WeatherApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -55,7 +64,7 @@
             BlueprintIdentifier = "EC555D872B055F0C002FF5C3"
             BuildableName = "Weather App.app"
             BlueprintName = "Weather App"
-            ReferencedContainer = "container:Weather App.xcodeproj">
+            ReferencedContainer = "container:WeatherApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,7 +81,7 @@
             BlueprintIdentifier = "EC555D872B055F0C002FF5C3"
             BuildableName = "Weather App.app"
             BlueprintName = "Weather App"
-            ReferencedContainer = "container:Weather App.xcodeproj">
+            ReferencedContainer = "container:WeatherApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

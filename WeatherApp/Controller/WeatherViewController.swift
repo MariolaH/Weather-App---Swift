@@ -14,6 +14,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var nightBackgroundImage: UIImageView!
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     
@@ -24,11 +26,25 @@ class WeatherViewController: UIViewController {
         locationManager.requestLocation()
         weatherManager.delegate = self
         searchTextField.delegate = self
+        changeBackgroundImage()
     }
     
     @IBAction func locationButton(_ sender: UIButton) {
         locationManager.requestLocation()
     }
+    
+    func changeBackgroundImage() {
+        let currentDate = Date()
+        let calender = Calendar.current
+        let hour = calender.component(.hour, from: currentDate)
+        if (6...20) .contains(hour){
+            backgroundImage.image = UIImage(named: "lightBackground")
+//            nightBackgroundImage.isHidden = true
+        } else {
+            nightBackgroundImage.image = UIImage(named: "darkBackground")
+        }
+    }
+    
 }
 
 

@@ -41,7 +41,18 @@ struct WeatherModel {
         case 801...804:
             return "cloud"
         case 800:
-            return "sun.max"
+            let currentDate = Date()
+            print(currentDate)
+            let calender = Calendar.current
+            let hour = calender.component(.hour, from: currentDate)
+            print(hour)
+            print("Current hour: \(hour)")
+            
+            if (6...20).contains(hour) {
+                return "sun.max"
+            } else {
+                return "moon.stars.fill"
+            }
         case 801:
             return "cloud.fill"
         default:

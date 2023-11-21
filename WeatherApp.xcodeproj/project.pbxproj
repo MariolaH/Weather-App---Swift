@@ -29,7 +29,7 @@
 		EC555D922B055F0C002FF5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC555D942B055F0D002FF5C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC555D972B055F0D002FF5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EC555D992B055F0D002FF5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC555D992B055F0D002FF5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WeatherApp/Info.plist; sourceTree = SOURCE_ROOT; };
 		ECD131442B06F10C00E05B8C /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
-				EC555D8A2B055F0C002FF5C3 /* Weather App */,
+				EC555D8A2B055F0C002FF5C3 /* WeatherApp */,
 				EC555D892B055F0C002FF5C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,7 +77,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC555D8A2B055F0C002FF5C3 /* Weather App */ = {
+		EC555D8A2B055F0C002FF5C3 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
 				ECD131432B06F0F500E05B8C /* Model */,
@@ -89,7 +89,7 @@
 				EC555D962B055F0D002FF5C3 /* LaunchScreen.storyboard */,
 				EC555D992B055F0D002FF5C3 /* Info.plist */,
 			);
-			path = "Weather App";
+			path = WeatherApp;
 			sourceTree = "<group>";
 		};
 		ECD131432B06F0F500E05B8C /* Model */ = {
@@ -137,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC555D832B055F0C002FF5C3 /* Build configuration list for PBXProject "Weather App" */;
+			buildConfigurationList = EC555D832B055F0C002FF5C3 /* Build configuration list for PBXProject "WeatherApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -334,8 +334,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LSMF6XRV9N;
+				"DSTROOT[sdk=*]" = "/tmp/$(PROJECT_NAME).dst";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Weather App/Info.plist";
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to get the current weather for where you are";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -367,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LSMF6XRV9N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Weather App/Info.plist";
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to get the current weather for where you are";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -392,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC555D832B055F0C002FF5C3 /* Build configuration list for PBXProject "Weather App" */ = {
+		EC555D832B055F0C002FF5C3 /* Build configuration list for PBXProject "WeatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC555D9A2B055F0D002FF5C3 /* Debug */,
