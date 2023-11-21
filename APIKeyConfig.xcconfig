@@ -1,12 +1,9 @@
 //
 //  APIKeyConfig.xcconfig
-//  Weather App
+//  WeatherApp
 //
 //  Created by Mariola Hullings on 11/20/23.
 //
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-
-API_KEY = 45828c575991010ef202c740624eba9f
-
