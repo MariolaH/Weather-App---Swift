@@ -17,6 +17,7 @@ struct WeatherModel {
     }
     
     var conditonName: String {
+        let hour = getCurrentHour()
         switch conditionID {
         case 200...211:
             return "cloud.bolt"
@@ -39,24 +40,23 @@ struct WeatherModel {
         case 781:
             return "tornado"
         case 801...804:
-            return "cloud"
+            return hourIsDaytime(hour) ? "cloud" : "cloud.moon.fill"
         case 800:
-            let currentDate = Date()
-            print(currentDate)
-            let calender = Calendar.current
-            let hour = calender.component(.hour, from: currentDate)
-            print(hour)
-            print("Current hour: \(hour)")
-            
-            if (6...20).contains(hour) {
-                return "sun.max"
-            } else {
-                return "moon.stars.fill"
-            }
+            return hourIsDaytime(hour) ? "sun.max" : "moon.stars.fill"
         case 801:
-            return "cloud.fill"
+            return hourIsDaytime(hour) ? "cloud.fill" : "moon.fill"
         default:
-            return "cloud"
+            return hourIsDaytime(hour) ? "cloud" : "moon"
         }
+    }
+    
+    func getCurrentHour() -> Int {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        return calendar.component(.hour, from: currentDate)
+    }
+
+    func hourIsDaytime(_ hour: Int) -> Bool {
+        return (6...20).contains(hour)
     }
 }
