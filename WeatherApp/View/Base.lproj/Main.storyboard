@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-s8-PZH">
-                                <rect key="frame" x="20" y="59" width="353" height="759"/>
+                                <rect key="frame" x="20" y="89" width="353" height="729"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HEM-z8-14a">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
@@ -41,7 +41,7 @@
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W23-cs-25W">
                                                 <rect key="frame" x="50" y="0.0" width="253" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" returnKeyType="go" smartInsertDeleteType="yes"/>
                                             </textField>
@@ -80,7 +80,6 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIk-xu-iRm">
                                                 <rect key="frame" x="100.66666666666666" y="0.0" width="38" height="119.66666666666667"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
-                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9f-JE-rsi">
@@ -92,13 +91,19 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOd-8a-uFZ" userLabel="City Label">
-                                        <rect key="frame" x="303" y="429.66666666666669" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <rect key="frame" x="303" y="429.66666666666663" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0Y-z9-xZj" userLabel="Time">
+                                        <rect key="frame" x="303" y="529.66666666666663" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HD-gs-F4I">
-                                        <rect key="frame" x="113" y="529.66666666666663" width="240" height="229.33333333333337"/>
+                                        <rect key="frame" x="113" y="629.66666666666663" width="240" height="99.333333333333371"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -115,7 +120,7 @@
                             <constraint firstItem="TS2-oF-EkG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bce-Es-gww"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X2y-s8-PZH" secondAttribute="trailing" constant="20" id="nL6-6D-pGj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X2y-s8-PZH" secondAttribute="bottom" id="oac-me-NQF"/>
-                            <constraint firstItem="X2y-s8-PZH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vS8-Ur-Vcy"/>
+                            <constraint firstItem="X2y-s8-PZH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="vS8-Ur-Vcy"/>
                             <constraint firstAttribute="trailing" secondItem="TS2-oF-EkG" secondAttribute="trailing" id="vbG-Am-AZ3"/>
                             <constraint firstItem="X2y-s8-PZH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="xRm-BD-1ka"/>
                         </constraints>
@@ -127,6 +132,7 @@
                         <outlet property="nightBackgroundImage" destination="TS2-oF-EkG" id="beL-WL-yiV"/>
                         <outlet property="searchTextField" destination="W23-cs-25W" id="KDa-WY-ndB"/>
                         <outlet property="temperatureLabel" destination="8fk-nB-mpX" id="jmN-pf-Qtc"/>
+                        <outlet property="time" destination="P0Y-z9-xZj" id="Tqw-qE-22m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,11 +148,11 @@
         <namedColor name="weatherColor">
             <color red="0.14900000393390656" green="0.25900000333786011" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.1764705882" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

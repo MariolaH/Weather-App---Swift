@@ -16,6 +16,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var nightBackgroundImage: UIImageView!
+    @IBOutlet weak var time: UILabel!
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     var localHour: Int?
@@ -50,9 +51,15 @@ class WeatherViewController: UIViewController {
                                         self.localHour = localHour
                         if (6...20).contains(localHour) {
                             self.backgroundImage.image = UIImage(named: "day")
+                            dateFormatter.dateFormat = "h:mm a"
+                            let localTime = dateFormatter.string(from: Date())
+                            self.time.text = "Time: \(localTime)"
                             
                         } else {
                             self.backgroundImage.image = UIImage(named: "night")
+                            dateFormatter.dateFormat = "h:mm a"
+                            let localTime = dateFormatter.string(from: Date())
+                            self.time.text = "Time: \(localTime)"
                         }
                     }
                     }
