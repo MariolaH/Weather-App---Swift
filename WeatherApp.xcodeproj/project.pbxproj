@@ -22,7 +22,6 @@
 		EC13E0292B0CECF500FCE0F2 /* Weather App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Weather App.entitlements"; sourceTree = "<group>"; };
 		EC2A71522B082BB20015B5EF /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		EC2A71542B083AB80015B5EF /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeyConfig.xcconfig; sourceTree = "<group>"; };
 		EC555D882B055F0C002FF5C3 /* Weather App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC555D8B2B055F0C002FF5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC555D8D2B055F0C002FF5C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		EC555D972B055F0D002FF5C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC555D992B055F0D002FF5C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WeatherApp/Info.plist; sourceTree = SOURCE_ROOT; };
 		EC59C50C2B104B8800E82855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC59C50E2B10F09500E82855 /* APIKeyConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeyConfig.xcconfig; sourceTree = "<group>"; };
 		ECD131442B06F10C00E05B8C /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +64,8 @@
 		EC555D7F2B055F0C002FF5C3 = {
 			isa = PBXGroup;
 			children = (
+				EC59C50E2B10F09500E82855 /* APIKeyConfig.xcconfig */,
 				EC13E0292B0CECF500FCE0F2 /* Weather App.entitlements */,
-				EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */,
 				EC555D8A2B055F0C002FF5C3 /* WeatherApp */,
 				EC555D892B055F0C002FF5C3 /* Products */,
 			);
@@ -208,7 +208,7 @@
 /* Begin XCBuildConfiguration section */
 		EC555D9A2B055F0D002FF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
+			baseConfigurationReference = EC59C50E2B10F09500E82855 /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -272,7 +272,7 @@
 		};
 		EC555D9B2B055F0D002FF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
+			baseConfigurationReference = EC59C50E2B10F09500E82855 /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -329,7 +329,6 @@
 		};
 		EC555D9D2B055F0D002FF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -363,7 +362,6 @@
 		};
 		EC555D9E2B055F0D002FF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC2A715A2B0BB5900015B5EF /* APIKeyConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

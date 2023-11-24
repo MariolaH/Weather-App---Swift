@@ -24,31 +24,31 @@ struct WeatherModel {
         case 200...211:
             return hourIsDaytime(localHour) ? "cloud.bolt" : "cloud.moon.bolt"
         case 230...232:
-            return hourIsDaytime(localHour) ? "cloud.bolt.rain" : "cloud.moon.bolt.fill"
+            return hourIsDaytime(localHour) ? "cloud.bolt.rain" : "cloud.moon.bolt"
         case 300, 321:
-            return hourIsDaytime(localHour) ? "cloud.drizzle" : "cloud.moon.rain.fill"
+            return hourIsDaytime(localHour) ? "cloud.drizzle" : "cloud.moon.rain"
         case 500...521:
-            return hourIsDaytime(localHour) ? "cloud.rain" : "cloud.moon.rain.fill"
+            return hourIsDaytime(localHour) ? "cloud.rain" : "cloud.moon.rain"
         case 522...531:
             return hourIsDaytime(localHour) ? "cloud.heavyrain" : "cloud.moon.rain"
         case 611...612:
-            return hourIsDaytime(localHour) ? "cloud.sleet" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.sleet" : "moon.dust"
         case 600...602:
-            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust"
         case 615...622:
-            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust"
         case 701...771:
             return hourIsDaytime(localHour) ? "cloud.fog" : "moon.haze"
         case 781:
             return "tornado"
         case 801...804:
-            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon"
         case 800:
-            return hourIsDaytime(localHour) ? "sun.max" : "moon.stars.fill"
+            return hourIsDaytime(localHour) ? "sun.max" : "moon.stars"
         case 801:
-            return hourIsDaytime(localHour) ? "cloud.fill" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud.fill" : "cloud.moon"
         default:
-            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon"
         }
     }
     

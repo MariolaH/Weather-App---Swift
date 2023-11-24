@@ -49,10 +49,10 @@ class WeatherViewController: UIViewController {
                     if let localHour = Int(localHourString) {
                                         self.localHour = localHour
                         if (6...20).contains(localHour) {
-                            self.backgroundImage.image = UIImage(named: "lightBackground")
+                            self.backgroundImage.image = UIImage(named: "day")
                             
                         } else {
-                            self.backgroundImage.image = UIImage(named: "darkBackground")
+                            self.backgroundImage.image = UIImage(named: "night")
                         }
                     }
                     }
