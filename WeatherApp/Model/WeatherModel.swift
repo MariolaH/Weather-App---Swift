@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 struct WeatherModel {
     let conditionID: Int
@@ -16,37 +17,38 @@ struct WeatherModel {
         return String(format: "%.1f", temperature)
     }
     
-    var conditonName: String {
-        let hour = getCurrentHour()
+    
+    
+    func conditionName(localHour: Int) -> String {
         switch conditionID {
         case 200...211:
-            return hourIsDaytime(hour) ? "cloud.bolt" : "cloud.moon.bolt"
+            return hourIsDaytime(localHour) ? "cloud.bolt" : "cloud.moon.bolt"
         case 230...232:
-            return hourIsDaytime(hour) ? "cloud.bolt.rain" : "cloud.moon.bolt.fill"
+            return hourIsDaytime(localHour) ? "cloud.bolt.rain" : "cloud.moon.bolt.fill"
         case 300, 321:
-            return hourIsDaytime(hour) ? "cloud.drizzle" : "cloud.moon.rain.fill"
+            return hourIsDaytime(localHour) ? "cloud.drizzle" : "cloud.moon.rain.fill"
         case 500...521:
-            return hourIsDaytime(hour) ? "cloud.rain" : "cloud.moon.rain.fill"
+            return hourIsDaytime(localHour) ? "cloud.rain" : "cloud.moon.rain.fill"
         case 522...531:
-            return hourIsDaytime(hour) ? "cloud.heavyrain" : "cloud.moon.rain"
+            return hourIsDaytime(localHour) ? "cloud.heavyrain" : "cloud.moon.rain"
         case 611...612:
-            return hourIsDaytime(hour) ? "cloud.sleet" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.sleet" : "moon.dust.fill"
         case 600...602:
-            return hourIsDaytime(hour) ? "cloud.snow" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust.fill"
         case 615...622:
-            return hourIsDaytime(hour) ? "cloud.snow" : "moon.dust.fill"
+            return hourIsDaytime(localHour) ? "cloud.snow" : "moon.dust.fill"
         case 701...771:
-            return hourIsDaytime(hour) ? "cloud.fog" : "moon.haze"
+            return hourIsDaytime(localHour) ? "cloud.fog" : "moon.haze"
         case 781:
             return "tornado"
         case 801...804:
-            return hourIsDaytime(hour) ? "cloud" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon.fill"
         case 800:
-            return hourIsDaytime(hour) ? "sun.max" : "moon.stars.fill"
+            return hourIsDaytime(localHour) ? "sun.max" : "moon.stars.fill"
         case 801:
-            return hourIsDaytime(hour) ? "cloud.fill" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud.fill" : "cloud.moon.fill"
         default:
-            return hourIsDaytime(hour) ? "cloud" : "cloud.moon.fill"
+            return hourIsDaytime(localHour) ? "cloud" : "cloud.moon.fill"
         }
     }
     

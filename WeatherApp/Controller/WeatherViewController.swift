@@ -18,6 +18,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var nightBackgroundImage: UIImageView!
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
+    var localHour: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +27,41 @@ class WeatherViewController: UIViewController {
         locationManager.requestLocation()
         weatherManager.delegate = self
         searchTextField.delegate = self
-        changeBackgroundImage()
     }
     
     @IBAction func locationButton(_ sender: UIButton) {
         locationManager.requestLocation()
     }
     
-    func changeBackgroundImage() {
-        let currentDate = Date()
-        let calender = Calendar.current
-        let hour = calender.component(.hour, from: currentDate)
-        if (6...20) .contains(hour){
-            backgroundImage.image = UIImage(named: "lightBackground")
-//            nightBackgroundImage.isHidden = true
-        } else {
-            nightBackgroundImage.image = UIImage(named: "darkBackground")
+    func getLocalTime(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                print("Error reverse geocoding location: \(error.localizedDescription)")
+            } else if let placemark = placemarks?.first {
+                if let timeZone = placemark.timeZone {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = timeZone
+                    dateFormatter.dateFormat = "HH"
+                    let localHourString = dateFormatter.string(from: Date())
+                    print("Local time for location: \(localHourString)")
+                    if let localHour = Int(localHourString) {
+                                        self.localHour = localHour
+                        if (6...20).contains(localHour) {
+                            self.backgroundImage.image = UIImage(named: "lightBackground")
+                            
+                        } else {
+                            self.backgroundImage.image = UIImage(named: "darkBackground")
+                        }
+                    }
+                    }
+                }
+            }
+            
         }
+        
     }
-    
-}
 
 
 //MARK: - UITextFieldDelegate
@@ -75,6 +91,23 @@ extension WeatherViewController: UITextFieldDelegate {
         //Use searchTextField to get the weather for that city
         if let city = searchTextField.text {
             weatherManager.fetchWeather(cityName: city)
+   
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(city) { (placemarks, error) in
+                if let error = error {
+                    print("Error geocoding city: \(error.localizedDescription)")
+                    // Handle the error here if needed
+                } else if let placemark = placemarks?.first {
+                    let cityLatitude = placemark.location?.coordinate.latitude ?? 0.0
+                    let cityLongitude = placemark.location?.coordinate.longitude ?? 0.0
+                    
+                    // Get the local time for the searched city
+                    self.getLocalTime(latitude: cityLatitude, longitude: cityLongitude)
+
+                    
+                    
+                }
+            }
         }
         searchTextField.text = ""
     }
@@ -87,7 +120,7 @@ extension WeatherViewController: WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
-            self.conditionalImageView.image = UIImage(systemName: weather.conditonName)
+            self.conditionalImageView.image = UIImage(systemName: weather.conditionName(localHour: self.localHour ?? 0))
             self.cityLabel.text = weather.cityName
         }
     }
@@ -107,6 +140,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             weatherManager.fetchWeather(latitude: lat, longtitude: lon)
+            getLocalTime(latitude: lat, longitude: lon)
         }
     }
     
