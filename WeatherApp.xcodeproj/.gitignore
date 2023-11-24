@@ -120,4 +120,5 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
 .APIKeyConfig.xcconfig
+APIKeyConfig.xcconfig
 .env
