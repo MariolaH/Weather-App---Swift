@@ -48,7 +48,7 @@ class WeatherViewController: UIViewController {
                     let localHourString = dateFormatter.string(from: Date())
                     print("Local time for location: \(localHourString)")
                     if let localHour = Int(localHourString) {
-                                        self.localHour = localHour
+                        self.localHour = localHour
                         if (6...20).contains(localHour) {
                             self.backgroundImage.image = UIImage(named: "day")
                             dateFormatter.dateFormat = "h:mm a"
@@ -62,13 +62,13 @@ class WeatherViewController: UIViewController {
                             self.time.text = "Time: \(localTime)"
                         }
                     }
-                    }
                 }
             }
-            
         }
         
     }
+    
+}
 
 
 //MARK: - UITextFieldDelegate
@@ -98,7 +98,7 @@ extension WeatherViewController: UITextFieldDelegate {
         //Use searchTextField to get the weather for that city
         if let city = searchTextField.text {
             weatherManager.fetchWeather(cityName: city)
-   
+            
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(city) { (placemarks, error) in
                 if let error = error {
@@ -110,9 +110,6 @@ extension WeatherViewController: UITextFieldDelegate {
                     
                     // Get the local time for the searched city
                     self.getLocalTime(latitude: cityLatitude, longitude: cityLongitude)
-
-                    
-                    
                 }
             }
         }

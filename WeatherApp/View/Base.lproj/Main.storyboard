@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poorAppIcon (1)" translatesAutoresizingMaskIntoConstraints="NO" id="TS2-oF-EkG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-s8-PZH">
                                 <rect key="frame" x="20" y="89" width="353" height="729"/>

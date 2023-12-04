@@ -46,16 +46,20 @@ struct WeatherManager {
   
     func fetchWeather(latitude: CLLocationDegrees, longtitude: CLLocationDegrees) {
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longtitude)"
+        //urlString passes to the performRequest(with:) function to fetch weather data for the specified location.
         performRequest(with: urlString)
     }
     
+    //Networking -
     func performRequest(with urlString: String) {
-        // 1. Create a URL
+        // 1. Create a URL - create an actual URL object
+        //initialzing url with URL()
         if let url = URL(string: urlString) {
-            // 2. Create a URLSession
+            // 2. Create a URLSession - the object thats going to be doing the networking
+            //this creates the URL session object which is like the browser. Its the thing that can perfom the networking
             let session = URLSession(configuration: .default)
             
-            // 3. Give a session a task
+            // 3. Give a session a task - fetching the data from that particular source
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
                     self.delegate?.didFailWithError(error: error!)
@@ -67,7 +71,7 @@ struct WeatherManager {
                     }
                 }
             }
-            // 4. Start the task
+            // 4. Start the task - when hit enter in the search bar which triggers the entire networking process and gets our data back.
             task.resume()
         }
     }
