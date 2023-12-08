@@ -9,15 +9,15 @@ import UIKit
 import CoreLocation
 
 struct WeatherModel {
+    //these properties are stored properties, because all they do is store pieces of data
     let conditionID: Int
     let cityName: String
     let temperature: Double
     
+    //computed property
     var temperatureString: String {
         return String(format: "%.1f", temperature)
     }
-    
-    
     
     func conditionName(localHour: Int) -> String {
         switch conditionID {
@@ -52,13 +52,13 @@ struct WeatherModel {
         }
     }
     
-    func getCurrentHour() -> Int {
-        let currentDate = Date()
-        let calendar = Calendar.current
-        return calendar.component(.hour, from: currentDate)
-    }
+//    func getCurrentHour() -> Int {
+//        let currentDate = Date()
+//        let calendar = Calendar.current
+//        return calendar.component(.hour, from: currentDate)
+//    }
 
-    func hourIsDaytime(_ hour: Int) -> Bool {
-        return (6...20).contains(hour)
+    func hourIsDaytime(_ localHour: Int) -> Bool {
+        return (6...20).contains(localHour)
     }
 }

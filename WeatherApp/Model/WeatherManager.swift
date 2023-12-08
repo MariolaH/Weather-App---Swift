@@ -60,11 +60,17 @@ struct WeatherManager {
             let session = URLSession(configuration: .default)
             
             // 3. Give a session a task - fetching the data from that particular source
+            //this the completion handler - { data, response, error in ...
             let task = session.dataTask(with: url) { data, response, error in
+                //check that error is not nill - means error occured
                 if error != nil {
+                    //error! - be able to check for errors
                     self.delegate?.didFailWithError(error: error!)
+                    //if error return - exit out of func, do not continue
                     return
                 }
+                //if not errors - check what data got back
+                // use optional binding to unwrap data object that got back
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
                         self.delegate?.didUpdateWeather(self, weather: weather)
@@ -75,16 +81,17 @@ struct WeatherManager {
             task.resume()
         }
     }
-    
+    //
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
+        //JSONDecoder - an object that can decode JSON
         let decoder = JSONDecoder()
         do {
+            //decodedData has the data type of WeatherData, means has the property name, id, temp from the struct WeatherData
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             let id = decodedData.weather[0].id
             let name = decodedData.name
+            print(name)
             let temp = decodedData.main.temp
-
-            
             let weather = WeatherModel(conditionID: id, cityName: name, temperature: temp)
             return weather
         } catch {

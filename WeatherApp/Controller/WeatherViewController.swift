@@ -26,6 +26,7 @@ class WeatherViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        //set the class as the delegate
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
